@@ -22,7 +22,7 @@ public class TestBase {
 	Logger logger = LoggerUtility.getLogger(this.getClass());
 	private boolean isLambdaTest ;
 	
-	@Parameters({"browser","isLambadaTest","isHeadless"})
+	@Parameters({"browser","isLambdaTest","isHeadless"})
 
 	@BeforeMethod(description = "Load the Homepage of the website")
 	public void setup(

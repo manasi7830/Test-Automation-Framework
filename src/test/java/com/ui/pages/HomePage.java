@@ -36,8 +36,6 @@ public final class HomePage extends BrowserUtility {
 		return loginPage;
 	}
 
-	public void quit() {
-
-	}
+	
 
 }

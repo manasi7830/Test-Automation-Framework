@@ -1,5 +1,7 @@
 package com.utility;
 
+
+
 import java.io.File;
 import java.io.IOException;
 import java.text.Format;
@@ -131,6 +133,10 @@ public abstract class BrowserUtility {
 			e.printStackTrace();
 		}
 		return path;
+
+	}
+	public void quit() {
+		driver.get().quit();
 
 	}
 
