@@ -35,14 +35,14 @@ public class LoginTest extends TestBase {
 
 	}
 
-//	@Test(description = "Verifies with the valid user is able to login into the application", groups = { "Sanity",
-//			"e2e" }, dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginTestExcelDataProvider", retryAnalyzer = com.ui.listners.MyRetryAnalyzer.class)
-//
-//	public void loginExcelTest(User user) {
-//
-//		assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName(),
-//				"Manasi avachat1");
-//
-//	}
+	@Test(description = "Verifies with the valid user is able to login into the application", groups = { "Sanity",
+			"e2e" }, dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginTestExcelDataProvider", retryAnalyzer = com.ui.listners.MyRetryAnalyzer.class)
+
+	public void loginExcelTest(User user) {
+
+		assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName(),
+				"Manasi avachat1");
+
+	}
 
 }
