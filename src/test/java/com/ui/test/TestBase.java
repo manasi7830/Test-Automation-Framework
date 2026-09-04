@@ -20,21 +20,19 @@ import com.utility.LoggerUtility;
 public class TestBase {
 	protected HomePage homePage;
 	Logger logger = LoggerUtility.getLogger(this.getClass());
-	private boolean isLambdaTest ;
-	
-	@Parameters({"browser","isLambdaTest","isHeadless"})
+	private boolean isLambdaTest;
 
+	@Parameters({ "browser", "isLambdaTest", "isHeadless" })
 	@BeforeMethod(description = "Load the Homepage of the website")
-	public void setup(
-			@Optional("chrome") String browser,
-			@Optional("false") boolean isLambadaTest,
-			@Optional("false") boolean isHeadless,
-			ITestResult result) {
-		this.isLambdaTest=isLambadaTest;
+
+	public void setup(@Optional("chrome") String browser, @Optional("false") boolean isLambadaTest,
+			@Optional("false") boolean isHeadless, ITestResult result) {
+
+		this.isLambdaTest = isLambadaTest;
 		WebDriver lambdaDriver;
 		if (isLambdaTest) {
 			lambdaDriver = LambdaTestUtility.intializeLambdaTestSession(browser, result.getMethod().getMethodName());
-			homePage=new HomePage(lambdaDriver);
+			homePage = new HomePage(lambdaDriver);
 		} else {
 
 			logger.info("Load the homepage of website");
@@ -45,13 +43,14 @@ public class TestBase {
 	public BrowserUtility getInstance() {
 		return homePage;
 	}
-	
+
 	@AfterMethod(description = "Tear down the browser")
 	public void tearDown() {
-		if(isLambdaTest) {
+		if (isLambdaTest) {
 			LambdaTestUtility.quiteSession();
-		}else {
-		homePage.quit();
-	}}
+		} else {
+			homePage.quit();
+		}
+	}
 
 }
