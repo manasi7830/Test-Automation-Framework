@@ -21,7 +21,7 @@ public class ProductCheckoutTest extends TestBase{
 	
 	
 	
-	@Test(description="Verify if the logged in User is able to buy the dress", groups= {"e2e","smoke","sanity"})
+	@Test(description="Verify if the logged in User is able to buy the dress", groups= {"e2e","smoke","sanity","Regression"})
 	public void checkoutTest() {
 		searchResultPage.clickOnTheProductAt(0).changeSize(L).addProductToCart().proceedToCheckout()
 		.goToConfirmAddressPage().goToShippmentPage().goToPaymentPage();
